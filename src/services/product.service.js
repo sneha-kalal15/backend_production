@@ -1,9 +1,12 @@
-let finalproduct= require('../repositories/product.repo')
+let finalproduct= require('../repository/product.repo')
 
 let getallproducts=async()=>{
     return await finalproduct.fetchproducts();
 }
 let createallproducts=async(title,price,image)=>{
-    return await finalproducts.createproducts({title,price,image});
+    return await finalproduct.createproducts({title,price,image});
 }
-model.export=(getallproducts,createallproducts)
+let updatetheproducts=async (id,payload) =>{
+    return await finalproduct.updateproducts(id,payload)}
+
+module.export=(getallproducts,createallproducts,updatetheproducts)

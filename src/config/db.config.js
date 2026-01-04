@@ -10,7 +10,7 @@ async function connection()
     await mongoose.connect(process.env.mongodb)
     console.log("db connected")
   }catch(err){
-    console.log("db connection failed")
+    console.log("db connection failed",err.message)
   }
 }
 module.exports=connection;
