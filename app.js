@@ -12,4 +12,4 @@ let productrouter=require('./src/routes/product.routes')
 app.use('/',statusrouter)
 app.use('/api',factrouter)
 app.use('/v2',productrouter)
-module.exports=app;
+module.exports=app

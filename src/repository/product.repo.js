@@ -1,14 +1,19 @@
 let products=require('../models/products.model')
-const fetchproducts=async ()=>{
-   return await products.find()
+const fetchproducts=async()=>{
+    return await products.find()
+}
+const createproducts=(payload)=>{
+    return  products.create(payload)
 }
 
-const createproducts=async(payload)=>{
-    return await products.create(payload)
+const updateproducts=(id,payload)=>{
+  return products.findByIdAndUpdate(id,payload)
 }
 
-const updateproducts=async(id,payload)=>{
-  return await products.findByIdAndUpdate(id,payload)
+const deleteproducts=(id)=>{
+  return products.findByIdAndDelete(id)
 }
 
-module.exports={fetchproducts,createproducts,updateproducts}  
+
+
+module.exports={fetchproducts,createproducts,deleteproducts,updateproducts}
